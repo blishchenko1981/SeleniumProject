@@ -11,46 +11,57 @@ import java.util.List;
 
 public class LibrarianLogin {
     public static void main(String[] args) throws InterruptedException {
+        String username = "";
+        for (int i = 0; i < 2; i++) {
+            WebDriverManager.chromedriver().setup();
+            WebDriver driver = new ChromeDriver();
 
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+
+            if (i == 0) {
+                username = "librarian43@library";
+            } else if (i == 1) {
+                username = "librarian18@library";
+            }
 
 //        Given librarian is on the loginPage
-        driver.get("http://library2.cybertekschool.com/login.html");
+            driver.get("http://library2.cybertekschool.com/login.html");
 
 //        Then verify that the title is “Login - Library”
-        if(driver.getTitle().equals("Login - Library")){
-            System.out.println("\"User on correct page\" = " + true + ", test step PASS");
-        } else {
-            System.out.println("Test step FAILED");
-        }
+            if (driver.getTitle().equals("Login - Library")) {
+                System.out.println("\"User on correct page\" = " + true + ", test step PASS");
+            } else {
+                System.out.println("Test step FAILED");
+            }
 
-        driver.manage().window().maximize();
+            driver.manage().window().maximize();
 //        When librarian enters valid email address and password
-        driver.findElement(By.id("inputEmail")).sendKeys("librarian43@library");
-        driver.findElement(By.id("inputPassword")).sendKeys("Sdet2022*");
-        System.out.println("step2 done");
 
-        Thread.sleep(2000);
+
+            driver.findElement(By.id("inputEmail")).sendKeys(username);
+            driver.findElement(By.id("inputPassword")).sendKeys("Sdet2022*");
+
+
+            Thread.sleep(2000);
 
 //        And librarian click sign in button
-        driver.findElement(By.tagName("button")).click();
-        System.out.println("step3 done");
+            driver.findElement(By.tagName("button")).click();
+
 //        Then verify that there are 3 modules on the page
+            Thread.sleep(3000);
 
-        List<WebElement> modules = driver.findElements(By.className("nav-link"));
-        System.out.println("step4 done");
+            List<WebElement> modules = driver.findElements(By.xpath("//li[@class='nav-item']"));
+            System.out.println("modules.size() = " + modules.size());
 
-        System.out.println("modules.size() = " + modules.size());
-        System.out.println("step 5 done");
-
-        driver.quit();
-
-
-
-
+            if (modules.size() == 3) {
+                System.out.println("Test pass for user: " + username);
+            } else {
+                System.out.println("Test failed for user: " + username);
+            }
 
 
+            driver.quit();
+
+        }
 
 
     }
