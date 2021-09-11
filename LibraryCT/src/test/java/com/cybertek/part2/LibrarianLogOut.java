@@ -22,7 +22,8 @@ public class LibrarianLogOut {
 
 
     public static void main(String[] args) throws InterruptedException {
-//        Given user is on the homePage
+
+        //        Given user is on the homePage
         ArrayList<String> librarians = new ArrayList<>();
         librarians.add("librarian43@library");
         librarians.add("librarian18@library");
@@ -44,12 +45,16 @@ public class LibrarianLogOut {
             String homeURL = driver.getCurrentUrl();
             Thread.sleep(2000);
 
-//        When user click username on the right top corner
+
+            //        When user click username on the right top corner
             driver.findElement(By.cssSelector("a[id='navbarDropdown']")).click();
 
-//        And user click Log Out
+
+            //        And user click Log Out
             driver.findElement(By.xpath("//*[@id='navbarCollapse']/ul[2]/li/div/a")).click();
-//        Then verify user navigate back to login page.
+
+
+            //        Then verify user navigate back to login page.
             Thread.sleep(2000);
 
            String logoutURL= driver.getCurrentUrl();
