@@ -32,6 +32,7 @@ public class LibrarianLogin {
             } else {
                 System.out.println("Test step FAILED");
             }
+Thread.sleep(2000);
 
             driver.manage().window().maximize();
 //        When librarian enters valid email address and password
@@ -59,7 +60,7 @@ public class LibrarianLogin {
             }
 
 
-            driver.quit();
+            //driver.quit();
 
         }
 

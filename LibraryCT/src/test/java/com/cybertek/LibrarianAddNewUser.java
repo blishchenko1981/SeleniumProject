@@ -46,11 +46,11 @@ public class LibrarianAddNewUser {
             String name = "Artem B";
             driver.findElement(By.name("full_name")).sendKeys(name);
             driver.findElement(By.name("password")).sendKeys("1111");
-           if(i==0) {driver.findElement(By.name("email")).sendKeys("abcdfirst@gmail.com");}
-            if(i==1) {driver.findElement(By.name("email")).sendKeys("abcdsecond@gmail.com");}
+           if(i==0) {driver.findElement(By.name("email")).sendKeys("abcdfirst10@gmail.com");}
+            if(i==1) {driver.findElement(By.name("email")).sendKeys("abcdsecond20@gmail.com");}
             driver.findElement(By.id("address")).sendKeys("335 Williams rd. Charlotte, NC");
 //            And librarian click save changes
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             driver.findElement(By.xpath("//*[@id=\"add_user_form\"]/div[2]/button[2]")).click();
             Thread.sleep(2000);
 //            Then verify a new user is created

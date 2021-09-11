@@ -34,7 +34,7 @@ public class LoginWithWrongCredentials {
             //When user enters invalid email address or password
             driver.findElement(By.xpath("//*[@id=\"inputEmail\"]")).sendKeys(username);
             driver.findElement(By.xpath("//*[@id=\"inputPassword\"]")).sendKeys(password);
-
+            Thread.sleep(3000);
             //And student click sign in button
             driver.findElement(By.xpath("//*[@id=\"login-form\"]/button")).click();
 
