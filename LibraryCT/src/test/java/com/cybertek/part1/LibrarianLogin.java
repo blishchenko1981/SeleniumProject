@@ -1,4 +1,4 @@
-package com.cybertek;
+package com.cybertek.part1;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
