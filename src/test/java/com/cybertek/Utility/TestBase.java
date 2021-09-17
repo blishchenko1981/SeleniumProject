@@ -17,15 +17,12 @@ import java.util.concurrent.TimeUnit;
 public abstract class TestBase {
    protected   WebDriver driver;
 
-    @BeforeAll
-    public static void setUpDriver() {
-        WebDriverManager.chromedriver().setup();
-    }
+
 
     @BeforeEach
     public void setUpWebDriver() {
         //driver = new ChromeDriver();
-        driver = WebDriverFactory.getDriver("chrome");
+        driver = WebDriverFactory.getDriver("edge");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }

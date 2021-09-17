@@ -1,4 +1,4 @@
-package com.cybertek.day6_junit_practice_utility_methods;
+package com.cybertek.tests.day6_junit_practice_utility_methods;
 
 import com.cybertek.Utility.TestBase;
 import org.junit.jupiter.api.Test;
