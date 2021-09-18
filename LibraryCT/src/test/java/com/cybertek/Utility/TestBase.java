@@ -2,7 +2,9 @@ package com.cybertek.Utility;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import java.util.concurrent.TimeUnit;
 
@@ -31,6 +33,15 @@ public abstract class TestBase {
     @AfterEach
     public void closeBrowser(){
         driver.quit();
+    }
+
+
+    public void thanksKseniia(){
+        // logOut from library
+        WebElement usernameLink = driver.findElement(By.cssSelector("li>a[href='#']"));
+        usernameLink.click();
+        WebElement logOutLink = driver.findElement(By.cssSelector("div>a[href='#']"));
+        logOutLink.click();
     }
 
 

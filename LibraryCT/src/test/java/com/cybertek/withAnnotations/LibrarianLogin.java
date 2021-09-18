@@ -1,6 +1,9 @@
-package com.cybertek.part1;
+package com.cybertek.withAnnotations;
 
+import com.cybertek.Utility.TestBase;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,13 +12,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.List;
 
 
-public class LibrarianLogin {
-    public static void main(String[] args) throws InterruptedException {
+public class LibrarianLogin extends TestBase {
+
+    @Test
+
+    public void loginLibrarian(){
+
         String username = "";
         for (int i = 0; i < 2; i++) {
-            WebDriverManager.chromedriver().setup();
-            WebDriver driver = new ChromeDriver();
-
 
             if (i == 0) {
                 username = "librarian43@library";
@@ -27,14 +31,10 @@ public class LibrarianLogin {
             driver.get("http://library2.cybertekschool.com/login.html");
 
 //        Then verify that the title is “Login - Library”
-            if (driver.getTitle().equals("Login - Library")) {
-                System.out.println("\"User on correct page\" = " + true + ", test step PASS");
-            } else {
-                System.out.println("Test step FAILED");
-            }
-Thread.sleep(2000);
 
-            driver.manage().window().maximize();
+            Assertions.assertTrue(driver.getTitle().equals("Login - Library"));
+
+
 //        When librarian enters valid email address and password
 
 
@@ -42,25 +42,19 @@ Thread.sleep(2000);
             driver.findElement(By.id("inputPassword")).sendKeys("Sdet2022*");
 
 
-            Thread.sleep(2000);
 
 //        And librarian click sign in button
             driver.findElement(By.tagName("button")).click();
 
 //        Then verify that there are 3 modules on the page
-            Thread.sleep(3000);
+
 
             List<WebElement> modules = driver.findElements(By.xpath("//li[@class='nav-item']"));
             System.out.println("modules.size() = " + modules.size());
 
-            if (modules.size() == 3) {
-                System.out.println("Test pass for user: " + username);
-            } else {
-                System.out.println("Test failed for user: " + username);
-            }
+            Assertions.assertEquals (3,    modules.size());
 
-
-            //driver.quit();
+            thanksKseniia();
 
         }
 
