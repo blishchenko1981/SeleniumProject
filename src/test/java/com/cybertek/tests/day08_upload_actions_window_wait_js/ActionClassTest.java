@@ -115,4 +115,41 @@ public class ActionClassTest extends TestBase {
 
     }
 
-}
+    @Test
+    public void testDoubleClick() {
+
+//https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_ondblclick
+
+       driver.get("https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_ondblclick");
+       BrowserUtil.waitFor(2);
+
+       driver.switchTo().frame("iframeResult");
+
+       WebElement forDoubleclick = driver.findElement(By.xpath("//p[.= 'Double-click this paragraph to trigger a function.']"));
+       Actions actions = new Actions(driver);
+       actions.doubleClick(forDoubleclick).perform();
+       BrowserUtil.waitFor(2);
+
+       // home work:   Assertions.assertEquals("Hello world", );
+    }
+       @Test
+               public void testRightClick(){
+
+          driver.get("https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_oncontextmenu");
+          driver.switchTo().frame("iframeResult");
+
+          WebElement yellowArea = driver.findElement(By.cssSelector("div[contextmenu= 'mymenu']"));
+
+          Actions actions = new Actions(driver);
+          actions.contextClick(yellowArea).perform();
+
+          BrowserUtil.waitFor(1);
+
+
+
+       }
+
+
+    }
+
+
