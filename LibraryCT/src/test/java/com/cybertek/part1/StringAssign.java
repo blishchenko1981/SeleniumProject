@@ -8,8 +8,10 @@ public class StringAssign {
 
     public static void main(String[] args) {
         StringAssign a = new StringAssign();
-        a.word1 += "hello";
-        a.word2 = "hello" ;
+        a.word1 += "";
+        a.word2 = "" ;
+        System.out.println("a.word1.length() = " + a.word1.length());
+        System.out.println("a.word2.length() = " + a.word2.length());
 
         System.out.println("word1 = " + a.word1);
         System.out.println("a.word2 = " + a.word2);
