@@ -52,7 +52,7 @@ public class LibrarianAddNewBook extends TestBase  {
             driver.findElement(By.xpath("//*[@id=\"book_group_id\"]/option[3]")).click();
             driver.findElement(By.cssSelector("textarea[id='description']")).sendKeys("Its a short " +
                     "novel written by american author Ernest Hemingway");
-
+            Thread.sleep(4000);
       // And librarian click save changes
             driver.findElement(By.cssSelector("button[type='submit']")).click();
 
@@ -63,6 +63,7 @@ public class LibrarianAddNewBook extends TestBase  {
 
             WebElement confirmMessage = driver.findElement(By.xpath("//div/div[@class= 'toast-message']"));
 
+            Thread.sleep(4000);
             String expectedResult = "The book has been created.";
             String actualResult = confirmMessage.getText();
 
@@ -70,7 +71,8 @@ public class LibrarianAddNewBook extends TestBase  {
             Thread.sleep(7000);
 
             // method to logout from page (extended from TestBase) ;)
-         thanksKseniia();
+
+            logoutFunction();
 
         }
 

@@ -77,7 +77,7 @@ public class BookCategory_21options extends TestBase {
 
             Assertions.assertTrue(category.getFirstSelectedOption().getText().equals("Drama"));
 
-           thanksKseniia();
+           logoutFunction();
 
         }
     }

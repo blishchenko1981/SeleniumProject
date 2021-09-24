@@ -51,7 +51,7 @@ public class UserStatus extends TestBase {
 
             //    And user click Log Out
 
-            thanksKseniia();
+            logoutFunction();
         }
 
     }

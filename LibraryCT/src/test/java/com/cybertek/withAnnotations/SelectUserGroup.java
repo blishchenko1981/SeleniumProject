@@ -1,6 +1,7 @@
 package com.cybertek.withAnnotations;
 
 import com.cybertek.Utility.TestBase;
+import com.cybertek.Utility.WebOrderUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -39,16 +40,13 @@ public class SelectUserGroup extends TestBase {
 //        Given librarian is on the homePage
 
         String password = "Sdet2022*";
-        ArrayList<String> librarians = new ArrayList<>();
-        librarians.add("librarian43@library");
-        librarians.add("librarian18@library");
+        ArrayList<String> users = new ArrayList<>();
+        users.add("librarian43@library");
+        users.add("librarian18@library");
 
-        for (String librarian : librarians) {
-            driver.get("http://library2.cybertekschool.com/login.html");
-            driver.findElement(By.xpath("//input[@id='inputEmail']")).sendKeys(librarian);
-            driver.findElement(By.xpath("//form[@id='login-form']/div[4]/input")).sendKeys(password);
-            driver.findElement(By.xpath("//button[@type = 'submit']")).click();
-            driver.manage().window().maximize();
+        for (String user : users) {
+
+            WebOrderUtility.loginFunction(driver, user, password);
 
 
           // When librarian click Users module
@@ -67,7 +65,7 @@ public class SelectUserGroup extends TestBase {
 
             Assertions.assertEquals(3, numberOFGroups.size() );
 
-            thanksKseniia();
+            WebOrderUtility.logoutFunction(driver);
 
         }
 

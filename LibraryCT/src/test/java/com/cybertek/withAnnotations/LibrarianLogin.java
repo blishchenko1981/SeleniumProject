@@ -54,7 +54,7 @@ public class LibrarianLogin extends TestBase {
 
             Assertions.assertEquals (3,    modules.size());
 
-            thanksKseniia();
+            logoutFunction();
 
         }
 

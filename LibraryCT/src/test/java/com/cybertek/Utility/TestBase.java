@@ -36,7 +36,7 @@ public abstract class TestBase {
     }
 
 
-    public void thanksKseniia(){
+    public void logoutFunction(){
         // logOut from library
         WebElement usernameLink = driver.findElement(By.cssSelector("li>a[href='#']"));
         usernameLink.click();
