@@ -1,6 +1,7 @@
 package com.cybertek.part1;
 
 import com.cybertek.Utility.TestBase;
+import com.cybertek.Utility.WebOrderUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -19,22 +20,16 @@ public class LibrarianAddNewBook extends TestBase  {
         //     librarian43@library
         //     librarian18@library
         String password = "Sdet2022*";
+        ArrayList<String> users = new ArrayList<>();
+        users.add("librarian43@library");
+        users.add("librarian18@library");
 
 
-        ArrayList<String> librarians = new ArrayList<>();
-        librarians.add("librarian43@library");
-        librarians.add("librarian18@library");
-
-
-        for (String librarian : librarians) {
+        for (String user : users) {
 
       // Given librarian is on the homePage
 
-            driver.get("https://library2.cybertekschool.com/login.html");
-
-            driver.findElement(By.cssSelector("input[type='email']")).sendKeys(librarian);
-            driver.findElement(By.cssSelector("input[type='password']")).sendKeys(password);
-            driver.findElement(By.cssSelector("button[type='submit']")).click();
+            WebOrderUtility.loginFunction(driver, user, password );
 
       // When librarian click Books module
 
@@ -52,7 +47,7 @@ public class LibrarianAddNewBook extends TestBase  {
             driver.findElement(By.xpath("//*[@id=\"book_group_id\"]/option[3]")).click();
             driver.findElement(By.cssSelector("textarea[id='description']")).sendKeys("Its a short " +
                     "novel written by american author Ernest Hemingway");
-            Thread.sleep(4000);
+            Thread.sleep(2000);
       // And librarian click save changes
             driver.findElement(By.cssSelector("button[type='submit']")).click();
 
@@ -72,7 +67,7 @@ public class LibrarianAddNewBook extends TestBase  {
 
             // method to logout from page (extended from TestBase) ;)
 
-            logoutFunction();
+            WebOrderUtility.logoutFunction(driver);
 
         }
 

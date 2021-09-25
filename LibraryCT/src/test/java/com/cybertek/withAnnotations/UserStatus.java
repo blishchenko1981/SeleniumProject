@@ -2,6 +2,7 @@ package com.cybertek.withAnnotations;
 
 import com.cybertek.Utility.TestBase;
 import com.cybertek.Utility.WebDriverFactory;
+import com.cybertek.Utility.WebOrderUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
@@ -51,7 +52,7 @@ public class UserStatus extends TestBase {
 
             //    And user click Log Out
 
-            logoutFunction();
+            WebOrderUtility.logoutFunction(driver);
         }
 
     }
