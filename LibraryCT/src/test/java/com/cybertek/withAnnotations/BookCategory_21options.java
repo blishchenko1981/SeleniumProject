@@ -1,6 +1,7 @@
 package com.cybertek.withAnnotations;
 
 import com.cybertek.Utility.TestBase;
+import com.cybertek.Utility.WebOrderUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -42,16 +43,9 @@ public class BookCategory_21options extends TestBase {
         users.add("librarian43@library");
         users.add("librarian18@library");
 
-        for (String user : users) {
+            for (String user : users) {
 
-            driver.get("http://library2.cybertekschool.com/login.html");
-            driver.findElement(By.xpath("//input[@id='inputEmail']")).sendKeys(user);
-            driver.findElement(By.xpath("//form[@id='login-form']/div[4]/input")).sendKeys(password);
-
-            //  todo AC#1
-            // Given user is on the homePage
-            driver.findElement(By.xpath("//button[@type = 'submit']")).click();
-            driver.manage().window().maximize();
+            WebOrderUtility.loginFunction(driver, user, password);
 
 
             //    When user click Books module
@@ -77,7 +71,7 @@ public class BookCategory_21options extends TestBase {
 
             Assertions.assertTrue(category.getFirstSelectedOption().getText().equals("Drama"));
 
-           logoutFunction();
+            WebOrderUtility.logoutFunction(driver);
 
         }
     }

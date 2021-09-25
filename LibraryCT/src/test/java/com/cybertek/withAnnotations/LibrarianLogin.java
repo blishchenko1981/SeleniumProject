@@ -1,6 +1,7 @@
 package com.cybertek.withAnnotations;
 
 import com.cybertek.Utility.TestBase;
+import com.cybertek.Utility.WebOrderUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -54,7 +55,7 @@ public class LibrarianLogin extends TestBase {
 
             Assertions.assertEquals (3,    modules.size());
 
-            logoutFunction();
+            WebOrderUtility.logoutFunction(driver);
 
         }
 
