@@ -1,15 +1,11 @@
-package com.cybertek.withAnnotations;
+package com.cybertek.userStrories_withAnnotations;
 
 import com.cybertek.Utility.TestBase;
 import com.cybertek.Utility.WebOrderUtility;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -35,7 +31,7 @@ public class LibrarianLogOut extends TestBase {
 
 
         @Test
-    public  void logoutTest() throws InterruptedException {
+    public  void logoutTest() {
             //        Given user is on the homePage
             ArrayList<String> users = new ArrayList<>();
             users.add("librarian43@library");

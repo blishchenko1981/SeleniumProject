@@ -1,14 +1,11 @@
-package com.cybertek.withAnnotations;
+package com.cybertek.userStrories_withAnnotations;
 
 import com.cybertek.Utility.TestBase;
 import com.cybertek.Utility.WebOrderUtility;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;

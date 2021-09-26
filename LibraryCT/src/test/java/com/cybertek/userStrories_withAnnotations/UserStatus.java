@@ -1,20 +1,17 @@
-package com.cybertek.withAnnotations;
+package com.cybertek.userStrories_withAnnotations;
 
 import com.cybertek.Utility.TestBase;
-import com.cybertek.Utility.WebDriverFactory;
 import com.cybertek.Utility.WebOrderUtility;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
+
+import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
 public class UserStatus extends TestBase {
 
@@ -27,11 +24,9 @@ public class UserStatus extends TestBase {
     public void testUserStatus() {
         librarians = new ArrayList<>(Arrays.asList("librarian43@library", "librarian18@library"));
         //driver.get("http://library2.cybertekschool.com/login.html");
-        for (int i = 0; i < librarians.size()-1; i++) {
-           driver.get("http://library2.cybertekschool.com/login.html");
-            driver.findElement(By.id("inputEmail")).sendKeys(librarians.get(i));
-            driver.findElement(By.id("inputPassword")).sendKeys(password);
-            driver.findElement(By.cssSelector("button[type='submit']")).click();
+        for (int i = 0; i < librarians.size(); i++) {
+
+            WebOrderUtility.loginFunction(driver,librarians.get(i),password);
 
 
            WebElement users =  driver.findElement(By.xpath("//li[2]/a"));
@@ -53,6 +48,7 @@ public class UserStatus extends TestBase {
             //    And user click Log Out
 
             WebOrderUtility.logoutFunction(driver);
+            System.out.println("librarian " + (i+1)+ " loged out");
         }
 
     }
