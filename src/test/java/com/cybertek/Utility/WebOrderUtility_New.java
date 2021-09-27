@@ -14,6 +14,8 @@ public class WebOrderUtility_New {
 
     public static void openWebOrderApp() {
         Driver.getDriver().get("http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/Login.aspx");
+        Driver.getDriver().get(ConfigReader.read("weborder_url"));
+
     }
 
     public static void login() {
@@ -89,6 +91,14 @@ public class WebOrderUtility_New {
         }
 
 
+
+    }
+
+
+    // Check for login error message is visible or not , by calling the BrowserUtil
+    public static boolean loginErrorMsgVisible(){
+        boolean elementFound = BrowserUtil.checkVisibilityOfElement(By.xpath("//span[.= 'Invalid Login or Password.']"), 3);
+return elementFound;
 
     }
 
