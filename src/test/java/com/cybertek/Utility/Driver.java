@@ -17,7 +17,6 @@ public class Driver {
             System.out.println("one object created only for the first time");
             return obj;
         }else{
-            System.out.println("you already have this object");
             return obj;
         }
 

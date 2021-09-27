@@ -9,26 +9,34 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
 public class WebOrderUtility {
 
-    public static void login(WebDriver driverParameter){
+    public static  void openWebOrderApp(){
+        Driver.getDriver().get("http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/Login.aspx");
+    }
+
+    public static void login(){
 
         // enter username
-        driverParameter.findElement(By.id("ctl00_MainContent_username")).sendKeys("Tester");
+        Driver.getDriver().findElement(By.id("ctl00_MainContent_username")).sendKeys("Tester");
         // enter password
-        driverParameter.findElement(By.id("ctl00_MainContent_password")) .sendKeys("test");
+        Driver.getDriver().findElement(By.id("ctl00_MainContent_password")) .sendKeys("test");
         // click login
-        driverParameter.findElement(By.id("ctl00_MainContent_login_button")).click();
+        Driver.getDriver().findElement(By.id("ctl00_MainContent_login_button")).click();
 
     }
-    public static void login(WebDriver driverParameter, String userName, String password){
+
+   public static void login(WebDriver driverParameter, String userName, String password){
+
 
         // enter username
-        driverParameter.findElement(By.id("ctl00_MainContent_username")).sendKeys(userName);
+       driverParameter.findElement(By.id("ctl00_MainContent_username")).sendKeys(userName);
         // enter password
         driverParameter.findElement(By.id("ctl00_MainContent_password")) .sendKeys(password);
         // click login
         driverParameter.findElement(By.id("ctl00_MainContent_login_button")).click();
 
     }
+
+
 
     public static void logout(WebDriver driverParam){
         driverParam.findElement(By.id("ctl00_logout")).click();
@@ -41,6 +49,7 @@ public class WebOrderUtility {
         try {
 
             WebElement header = driverParam.findElement(By.xpath("//h2 [normalize-space(.)= 'List of All Orders']"));
+
             System.out.println("element was identify");
             result = true;
         }catch(NoSuchElementException e){

@@ -22,7 +22,7 @@ public abstract class TestBase {
     @BeforeEach
     public void setUpWebDriver() {
         //driver = new ChromeDriver();
-        driver = WebDriverFactory.getDriver("chrome");
+        driver = Driver.getDriver(); //WebDriverFactory.getDriver("chrome");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
