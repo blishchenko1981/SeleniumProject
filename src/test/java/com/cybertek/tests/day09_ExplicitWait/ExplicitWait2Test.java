@@ -16,7 +16,7 @@ public class ExplicitWait2Test extends TestBase {
         //  WebOrderUtility.login(driver);
         driver.get("http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/Login.aspx");
 
-        WebOrderUtility.login(driver, "Tester", "test");
+        WebOrderUtility.login( "Tester", "test");
 
         WebOrderUtility.isAtOrderPage(driver);
 
@@ -25,7 +25,7 @@ public class ExplicitWait2Test extends TestBase {
         WebOrderUtility.logout(driver);
         BrowserUtil.waitFor(3);
 
-        WebOrderUtility.login(driver, "Tester", "test");
+        WebOrderUtility.login( "Tester", "test");
         WebOrderUtility.isAtOrderPage(driver);
         BrowserUtil.waitFor(3);
 

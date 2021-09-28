@@ -5,12 +5,18 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.Arrays;
+import java.util.List;
+
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
 public class WebOrderUtility {
 
     public static  void openWebOrderApp(){
-        Driver.getDriver().get("http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/Login.aspx");
+        //Driver.getDriver().get("http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/Login.aspx");
+        Driver.getDriver().get(ConfigReader.read("weborder_url"));
+
     }
 
     public static void login(){
@@ -24,15 +30,15 @@ public class WebOrderUtility {
 
     }
 
-   public static void login(WebDriver driverParameter, String userName, String password){
+   public static void login( String userName, String password){
 
 
         // enter username
-       driverParameter.findElement(By.id("ctl00_MainContent_username")).sendKeys(userName);
+       Driver.getDriver().findElement(By.id("ctl00_MainContent_username")).sendKeys(userName);
         // enter password
-        driverParameter.findElement(By.id("ctl00_MainContent_password")) .sendKeys(password);
+       Driver.getDriver().findElement(By.id("ctl00_MainContent_password")) .sendKeys(password);
         // click login
-        driverParameter.findElement(By.id("ctl00_MainContent_login_button")).click();
+       Driver.getDriver().findElement(By.id("ctl00_MainContent_login_button")).click();
 
     }
 
@@ -59,5 +65,36 @@ public class WebOrderUtility {
         return result;
     }
 
+    public static boolean verifyUserName (String username) {
+        WebElement loginInfoArea = Driver.getDriver().findElement(By.cssSelector("div.login_info"));
+        System.out.println("loginInfoArea.getText().contains(\"Tester\") = " + loginInfoArea.getText().contains("Tester"));
+
+        return loginInfoArea.getText().contains(username);
+    }
+
+    public static String getUserNameFromWelcomeMessage () {
+        WebElement loginInfoArea = Driver.getDriver().findElement(By.cssSelector("div.login_info"));
+        String welcomeMessage = loginInfoArea.getText();
+
+        return welcomeMessage.replace("Welcome, ", "").replace("! | Logout", "");
+    }
+
+    public static void selectSidebarTab(String tabName) {
+
+        List<String> allTabs = Arrays.asList("View all orders", "View all products", "Order");
+        if(allTabs.contains(tabName)){
+
+            Driver.getDriver().findElement(By.linkText(tabName)).click();
+        } else {  Driver.getDriver().findElement(By.linkText("View all orders")).click();
+        }
+
+    }
+
+    // Check for login error message is visible or not , by calling the BrowserUtil
+    public static boolean loginErrorMsgVisible(){
+        boolean elementFound = BrowserUtil.checkVisibilityOfElement(By.xpath("//span[.= 'Invalid Login or Password.']"), 3);
+        return elementFound;
+
+    }
 
 }

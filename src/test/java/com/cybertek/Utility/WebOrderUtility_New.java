@@ -13,7 +13,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElem
 public class WebOrderUtility_New {
 
     public static void openWebOrderApp() {
-        Driver.getDriver().get("http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/Login.aspx");
+        //Driver.getDriver().get("http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/Login.aspx");
         Driver.getDriver().get(ConfigReader.read("weborder_url"));
 
     }
@@ -89,8 +89,6 @@ public class WebOrderUtility_New {
             Driver.getDriver().findElement(By.linkText(tabName)).click();
         } else {  Driver.getDriver().findElement(By.linkText("View all orders")).click();
         }
-
-
 
     }
 

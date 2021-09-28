@@ -3,6 +3,8 @@ package com.cybertek.Utility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Driver {
 
@@ -13,12 +15,35 @@ public class Driver {
     // return only one WebDriver instance
 
     public static WebDriver getDriver(){
+        String browserName = ConfigReader.read("browser");
+
         if(obj== null){
-            WebDriverManager.chromedriver().setup();
-            obj = new ChromeDriver();
-            System.out.println("one object created only for the first time");
+
+            switch (browserName.toLowerCase()){
+
+                case "crome" :
+                    WebDriverManager.chromedriver().setup();
+                    obj = new ChromeDriver();
+                    break;
+                case "firefox":
+                    WebDriverManager.firefoxdriver().setup();
+                    obj = new FirefoxDriver();
+                    break;
+                case "Edge":
+                    WebDriverManager.edgedriver().setup();
+                    obj = new EdgeDriver();
+                    break;
+
+                default:
+                    obj = null;
+                    System.out.println("UNKNOWN BROWSER TYPE!!! " + browserName);
+            }
+
+
+            obj.manage().window().maximize();
             return obj;
         }else{
+            System.out.println("you have it just use existing one");
             return obj;
         }
 
