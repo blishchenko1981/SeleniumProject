@@ -96,7 +96,28 @@ public class WebOrderTest  extends TestBase {
 
     }
 
+    @Test
+    public  void isAllCheckedTest(){
 
+        WebOrderUtility_New.openWebOrderApp();
+        WebOrderUtility_New.login();
+        WebOrderUtility_New.checkAll();
+        BrowserUtil.waitFor(2);
 
+        Assertions.assertTrue(WebOrderUtility_New.checkAll());
+
+    }
+    @Test
+    public  void isAllUncheckedTest(){
+
+        WebOrderUtility_New.openWebOrderApp();
+        WebOrderUtility_New.login();
+        WebOrderUtility_New.checkAll();
+        WebOrderUtility_New.unCheckAll();
+        BrowserUtil.waitFor(2);
+
+        Assertions.assertTrue(WebOrderUtility_New.unCheckAll());
+
+    }
 
 }

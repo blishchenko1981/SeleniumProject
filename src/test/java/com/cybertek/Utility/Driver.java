@@ -21,7 +21,7 @@ public class Driver {
 
             switch (browserName.toLowerCase()){
 
-                case "crome" :
+                case "chrome" :
                     WebDriverManager.chromedriver().setup();
                     obj = new ChromeDriver();
                     break;
@@ -43,7 +43,7 @@ public class Driver {
             obj.manage().window().maximize();
             return obj;
         }else{
-            System.out.println("you have it just use existing one");
+           // System.out.println("you have it just use existing one");
             return obj;
         }
 

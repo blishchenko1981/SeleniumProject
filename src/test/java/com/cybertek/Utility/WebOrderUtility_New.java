@@ -1,5 +1,6 @@
 package com.cybertek.Utility;
 
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -96,9 +97,53 @@ public class WebOrderUtility_New {
     // Check for login error message is visible or not , by calling the BrowserUtil
     public static boolean loginErrorMsgVisible(){
         boolean elementFound = BrowserUtil.checkVisibilityOfElement(By.xpath("//span[.= 'Invalid Login or Password.']"), 3);
-return elementFound;
+          return elementFound;
 
     }
 
+    public static boolean checkAll() {
+
+        WebElement checkAllBtn = Driver.getDriver().findElement(By.linkText("Check All"));
+        checkAllBtn.click();
+        ////input[@type = 'checkbox']
+
+
+        List<WebElement> checkbox = Driver.getDriver().findElements(By.xpath("//input[@type = 'checkbox']"));
+       boolean allChecked = false;
+        for (WebElement webElement : checkbox) {
+            if(!webElement.isSelected()){
+                allChecked = false;
+                break;
+            }else{
+                allChecked = true;
+            }
+
+        }
+
+return allChecked;
+    }
+
+
+    public static boolean unCheckAll() {
+
+        WebElement checkAllBtn = Driver.getDriver().findElement(By.linkText("Uncheck All"));
+        checkAllBtn.click();
+        ////input[@type = 'checkbox']
+
+
+        List<WebElement> checkbox = Driver.getDriver().findElements(By.xpath("//input[@type = 'checkbox']"));
+        boolean allUnchecked = false;
+        for (WebElement webElement : checkbox) {
+            if(webElement.isSelected()){
+                allUnchecked = false;
+                break;
+            }else{
+                allUnchecked = true;
+            }
+
+        }
+
+        return allUnchecked;
+    }
 
 }
