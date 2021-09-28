@@ -33,6 +33,8 @@ public class BrowserUtil {
         }catch (
                 TimeoutException e){
             System.out.println("e.getMessage() = " + e.getMessage());
+
+            System.out.println("we did not see the error mellage element");
         }
 
 

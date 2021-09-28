@@ -111,9 +111,11 @@ public class WebOrderTest  extends TestBase {
     public  void isAllUncheckedTest(){
 
         WebOrderUtility_New.openWebOrderApp();
+
         WebOrderUtility_New.login();
         WebOrderUtility_New.checkAll();
         WebOrderUtility_New.unCheckAll();
+        System.out.println("its firefox");
         BrowserUtil.waitFor(2);
 
         Assertions.assertTrue(WebOrderUtility_New.unCheckAll());
