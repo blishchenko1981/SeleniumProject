@@ -1,7 +1,7 @@
 package com.cybertek.userStrories_withAnnotations;
 
 import com.cybertek.Utility.TestBase;
-import com.cybertek.Utility.WebOrderUtility;
+import com.cybertek.Utility.LibraryUtility;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -39,7 +39,7 @@ public class LibrarianLogOut extends TestBase {
             String password = "Sdet2022*";
 
         for (String user : users) {
-            WebOrderUtility.loginFunction(driver, user,password );
+            LibraryUtility.loginFunction( user );
 
             //        When user click username on the right top corner
            WebElement userInfo =  driver.findElement(By.cssSelector("a[id='navbarDropdown']"));

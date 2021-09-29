@@ -1,7 +1,7 @@
 package com.cybertek.userStrories_withAnnotations;
 
 import com.cybertek.Utility.TestBase;
-import com.cybertek.Utility.WebOrderUtility;
+import com.cybertek.Utility.LibraryUtility;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -52,7 +52,7 @@ public class LibrarianLogin extends TestBase {
 
             Assertions.assertEquals (3,    modules.size());
 
-            WebOrderUtility.logoutFunction(driver);
+            LibraryUtility.logoutFunction();
 
         }
 

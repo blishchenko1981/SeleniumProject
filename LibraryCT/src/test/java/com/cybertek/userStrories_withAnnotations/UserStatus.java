@@ -1,7 +1,7 @@
 package com.cybertek.userStrories_withAnnotations;
 
 import com.cybertek.Utility.TestBase;
-import com.cybertek.Utility.WebOrderUtility;
+import com.cybertek.Utility.LibraryUtility;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -26,7 +26,7 @@ public class UserStatus extends TestBase {
         //driver.get("http://library2.cybertekschool.com/login.html");
         for (int i = 0; i < librarians.size(); i++) {
 
-            WebOrderUtility.loginFunction(driver,librarians.get(i),password);
+            LibraryUtility.loginFunction(librarians.get(i));
 
 
            WebElement users =  driver.findElement(By.xpath("//li[2]/a"));
@@ -47,7 +47,7 @@ public class UserStatus extends TestBase {
 
             //    And user click Log Out
 
-            WebOrderUtility.logoutFunction(driver);
+            LibraryUtility.logoutFunction();
             System.out.println("librarian " + (i+1)+ " loged out");
         }
 

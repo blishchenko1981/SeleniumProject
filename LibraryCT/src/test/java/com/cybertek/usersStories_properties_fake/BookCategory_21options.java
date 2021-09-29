@@ -1,7 +1,9 @@
-package com.cybertek.userStrories_withAnnotations;
+package com.cybertek.usersStories_properties_fake;
 
+import com.cybertek.Utility.BrowserUtil;
+import com.cybertek.Utility.ConfigReader;
 import com.cybertek.Utility.TestBase;
-import com.cybertek.Utility.WebOrderUtility;
+import com.cybertek.Utility.LibraryUtility;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -12,37 +14,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookCategory_21options extends TestBase {
-    //     Environment:
-//     http://library2.cybertekschool.com/login.html
-//
-//    Users:
-//    student54@library
-//    student55@library
-//    student56@library
-//    librarian43@library
-//    librarian18@library
 
 
     //    User story:
 //    As a user, I want to filter book categories.
 
     ArrayList<String> users;
-    public static String password = "Sdet2022*";
-
 
     @Test
     public void BookCategory() {
         users = new ArrayList<>();
-        users.add("student54@library");
-        users.add("student55@library");
-        users.add("student56@library");
-        users.add("librarian43@library");
-        users.add("librarian18@library");
+        users.add(ConfigReader.read("student1"));
+        users.add(ConfigReader.read("student2"));
+        users.add(ConfigReader.read("student3"));
+        users.add(ConfigReader.read("librarian1"));
+        users.add(ConfigReader.read("librarian2"));
 
             for (String user : users) {
-
-            WebOrderUtility.loginFunction(driver, user, password);
-
+            LibraryUtility.goToLoginPage();
+            LibraryUtility.loginFunction(user);
 
             //    When user click Books module
             WebElement bookModule =   driver.findElement(By.xpath("//span[text()= 'Books']"));
@@ -53,7 +43,7 @@ public class BookCategory_21options extends TestBase {
 
             //    Then verify there are 21 options
             List<WebElement> options = driver.findElements(By.xpath("//select[@id='book_categories']/option"));
-            System.out.println("options.size() = " + options.size());
+            System.out.println(user + "options.size() = " + options.size());
 
             Assertions.assertTrue(options.size() == 21);
 
@@ -67,7 +57,8 @@ public class BookCategory_21options extends TestBase {
 
             Assertions.assertTrue(category.getFirstSelectedOption().getText().equals("Drama"));
 
-            WebOrderUtility.logoutFunction(driver);
+                BrowserUtil.waitFor(4);
+            LibraryUtility.logoutFunction();
 
         }
     }

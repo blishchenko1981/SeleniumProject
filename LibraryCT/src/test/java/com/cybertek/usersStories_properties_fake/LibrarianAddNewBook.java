@@ -1,7 +1,10 @@
-package com.cybertek.userStrories_withAnnotations;
+package com.cybertek.usersStories_properties_fake;
 
+import com.cybertek.Utility.BrowserUtil;
+import com.cybertek.Utility.ConfigReader;
 import com.cybertek.Utility.TestBase;
-import com.cybertek.Utility.WebOrderUtility;
+import com.cybertek.Utility.LibraryUtility;
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -14,22 +17,23 @@ public class LibrarianAddNewBook extends TestBase {
 
 
         @Test
-        public void testAddNewBook() throws InterruptedException {
+        public void testAddNewBook() {
             //     librarian43@library
             //     librarian18@library
             String password = "Sdet2022*";
 
 
             ArrayList<String> librarians = new ArrayList<>();
-            librarians.add("librarian43@library");
-            librarians.add("librarian18@library");
+            librarians.add(ConfigReader.read("librarian1"));
+            librarians.add(ConfigReader.read("librarian2"));
 
 
             for (String librarian : librarians) {
 
                 // Given librarian is on the homePage
 
-                WebOrderUtility.loginFunction(driver, librarian, password);
+                LibraryUtility.goToLoginPage();
+                LibraryUtility.loginFunction(librarian);
 
                 // When librarian click Books module
 
@@ -38,21 +42,19 @@ public class LibrarianAddNewBook extends TestBase {
                 // And librarian click “+Add Book” button
                 driver.findElement(By.cssSelector("a[data-target='#ajax']")).click();
 
-                // When librarian enter BookName, ISBN, Year, Author, and Description
-                driver.findElement(By.cssSelector("input[placeholder='Book Name']")).sendKeys("The oldman " +
-                        "and the Sea");
-                driver.findElement(By.cssSelector("input[placeholder='ISBN']")).sendKeys("12345");
-                driver.findElement(By.cssSelector("input[placeholder='Year']")).sendKeys("1952");
-                driver.findElement(By.cssSelector("input[placeholder='Author']")).sendKeys("Ernest Hemingway");
-                driver.findElement(By.xpath("//*[@id=\"book_group_id\"]/option[3]")).click();
-                driver.findElement(By.cssSelector("textarea[id='description']")).sendKeys("Its a short " +
-                        "novel written by american author Ernest Hemingway");
+                Faker faker = new Faker();
 
+                // When librarian enter BookName, ISBN, Year, Author, and Description
+                driver.findElement(By.cssSelector("input[placeholder='Book Name']")).sendKeys(faker.book().title());
+                driver.findElement(By.cssSelector("input[placeholder='ISBN']")).sendKeys(faker.numerify("33333"));
+                driver.findElement(By.cssSelector("input[placeholder='Year']")).sendKeys(faker.numerify("####"));
+                driver.findElement(By.cssSelector("input[placeholder='Author']")).sendKeys(faker.book().author());
+                driver.findElement(By.xpath("//*[@id=\"book_group_id\"]/option[3]")).click();
+                driver.findElement(By.cssSelector("textarea[id='description']")).sendKeys(faker.book().publisher());
+
+                BrowserUtil.waitFor(3);
                 // And librarian click save changes
                 driver.findElement(By.cssSelector("button[type='submit']")).click();
-
-
-
 
                 // Then verify a new book is added ( by check text from green pup up window , that appears for 5 second)
 
@@ -62,10 +64,10 @@ public class LibrarianAddNewBook extends TestBase {
                 String actualResult = confirmMessage.getText();
 
                 Assertions.assertEquals(expectedResult, actualResult);
-                Thread.sleep(7000);
+                BrowserUtil.waitFor(6);
 
                 // method to logout from page (extended from TestBase) ;)
-                WebOrderUtility.logoutFunction(driver);
+                LibraryUtility.logoutFunction();
 
             }
 
