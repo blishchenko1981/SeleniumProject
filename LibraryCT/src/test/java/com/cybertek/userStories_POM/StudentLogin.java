@@ -45,7 +45,7 @@ public class StudentLogin extends TestBase {
             loginPage.logIn(user);
             BrowserUtil.waitFor(3);
 
-            //        Then verify that there are 2 models on the page
+            //        Then verify that there are 2 modules on the page
             List<WebElement> modules = Driver.getDriver().findElements(By.xpath("//li[@class = 'nav-item']"));
             System.out.println(user + ", modules.size() = " + modules.size());
 
