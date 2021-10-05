@@ -1,6 +1,6 @@
 package com.cybertek.tests.day09_ExplicitWait;
 
-import com.cybertek.Utility.Driver;
+import com.cybertek.utility.Driver;
 import org.junit.jupiter.api.Test;
 
 public class SingletonPractice {

@@ -1,6 +1,6 @@
 package com.cybertek.userStories_POM;
 
-import com.cybertek.Utility.*;
+import com.cybertek.utility.*;
 import com.cybertek.pages.LibLoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Assertions;

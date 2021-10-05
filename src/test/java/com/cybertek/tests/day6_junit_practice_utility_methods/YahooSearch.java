@@ -2,7 +2,7 @@ package com.cybertek.tests.day6_junit_practice_utility_methods;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.cybertek.Utility.TestBase;
+import com.cybertek.utility.TestBase;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

@@ -1,7 +1,7 @@
 package com.cybertek.userStories_POM;
 
-import com.cybertek.Utility.BrowserUtil;
-import com.cybertek.Utility.Driver;
+import com.cybertek.utility.BrowserUtil;
+import com.cybertek.utility.Driver;
 import com.cybertek.pages.LibLoginPage;
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Assertions;

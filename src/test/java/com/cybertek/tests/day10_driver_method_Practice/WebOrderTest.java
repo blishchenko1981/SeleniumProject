@@ -1,15 +1,12 @@
 package com.cybertek.tests.day10_driver_method_Practice;
 
-import com.cybertek.Utility.*;
+import com.cybertek.utility.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WebOrderTest  extends TestBase {
 

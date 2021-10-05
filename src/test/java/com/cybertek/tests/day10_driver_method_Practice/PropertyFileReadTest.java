@@ -1,11 +1,9 @@
 package com.cybertek.tests.day10_driver_method_Practice;
 
-import com.cybertek.Utility.ConfigReader;
-import javafx.beans.property.Property;
+import com.cybertek.utility.ConfigReader;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 

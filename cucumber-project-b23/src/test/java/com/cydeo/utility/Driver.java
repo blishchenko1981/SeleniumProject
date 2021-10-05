@@ -1,5 +1,4 @@
-package com.cybertek.Utility;
-
+package com.cydeo.utility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,7 +7,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
 
 public class Driver {
-
     private Driver(){}
 
     private static WebDriver obj;
@@ -48,7 +46,7 @@ public class Driver {
             obj.manage().window().maximize();
             return obj;
         }else{
-           // System.out.println("you have it just use existing one");
+            // System.out.println("you have it just use existing one");
             return obj;
         }
 
@@ -58,8 +56,8 @@ public class Driver {
 
         // check if we have WebDriver instance or not
         // basically checking if obj is null or not
-       // if not null
-            // quit the browser
+        // if not null
+        // quit the browser
         // make it null , cz once quit it can not be used;
 
         if(obj != null ){
@@ -68,5 +66,4 @@ public class Driver {
         }
 
     }
-
 }

@@ -1,9 +1,9 @@
 package com.cybertek.usersStories_properties_fake;
 
-import com.cybertek.Utility.BrowserUtil;
-import com.cybertek.Utility.ConfigReader;
-import com.cybertek.Utility.Driver;
-import com.cybertek.Utility.LibraryUtility;
+import com.cybertek.utility.BrowserUtil;
+import com.cybertek.utility.ConfigReader;
+import com.cybertek.utility.Driver;
+import com.cybertek.utility.LibraryUtility;
 import com.github.javafaker.Faker;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.Assertions;

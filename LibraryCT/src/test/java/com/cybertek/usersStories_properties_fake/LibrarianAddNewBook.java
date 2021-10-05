@@ -1,9 +1,9 @@
 package com.cybertek.usersStories_properties_fake;
 
-import com.cybertek.Utility.BrowserUtil;
-import com.cybertek.Utility.ConfigReader;
-import com.cybertek.Utility.TestBase;
-import com.cybertek.Utility.LibraryUtility;
+import com.cybertek.utility.BrowserUtil;
+import com.cybertek.utility.ConfigReader;
+import com.cybertek.utility.TestBase;
+import com.cybertek.utility.LibraryUtility;
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

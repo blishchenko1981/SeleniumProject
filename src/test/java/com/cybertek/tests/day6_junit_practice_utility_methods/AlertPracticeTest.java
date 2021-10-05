@@ -1,6 +1,6 @@
 package com.cybertek.tests.day6_junit_practice_utility_methods;
 
-import com.cybertek.Utility.TestBase;
+import com.cybertek.utility.TestBase;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 

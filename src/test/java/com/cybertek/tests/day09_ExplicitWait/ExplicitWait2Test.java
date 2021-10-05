@@ -1,11 +1,9 @@
 package com.cybertek.tests.day09_ExplicitWait;
 
-import com.cybertek.Utility.BrowserUtil;
-import com.cybertek.Utility.TestBase;
-import com.cybertek.Utility.WebOrderUtility;
+import com.cybertek.utility.BrowserUtil;
+import com.cybertek.utility.TestBase;
+import com.cybertek.utility.WebOrderUtility;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
 public class ExplicitWait2Test extends TestBase {
 

@@ -1,4 +1,4 @@
-package com.cybertek.Utility;
+package com.cybertek.utility;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

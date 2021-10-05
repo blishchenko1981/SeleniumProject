@@ -1,7 +1,7 @@
 package com.cybertek.homeTask;
 
-import com.cybertek.Utility.BrowserUtil;
-import com.cybertek.Utility.TestBase;
+import com.cybertek.utility.BrowserUtil;
+import com.cybertek.utility.TestBase;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;

@@ -1,7 +1,7 @@
 package com.cybertek.userStrories_withAnnotations;
 
-import com.cybertek.Utility.TestBase;
-import com.cybertek.Utility.LibraryUtility;
+import com.cybertek.utility.TestBase;
+import com.cybertek.utility.LibraryUtility;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

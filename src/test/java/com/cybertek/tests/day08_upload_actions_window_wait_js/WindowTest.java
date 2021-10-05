@@ -1,7 +1,7 @@
 package com.cybertek.tests.day08_upload_actions_window_wait_js;
 
-import com.cybertek.Utility.BrowserUtil;
-import com.cybertek.Utility.TestBase;
+import com.cybertek.utility.BrowserUtil;
+import com.cybertek.utility.TestBase;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

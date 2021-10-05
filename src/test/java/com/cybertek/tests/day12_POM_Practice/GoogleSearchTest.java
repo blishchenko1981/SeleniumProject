@@ -1,8 +1,7 @@
 package com.cybertek.tests.day12_POM_Practice;
 
-import com.cybertek.Utility.BrowserUtil;
-import com.cybertek.Utility.Driver;
-import com.cybertek.Utility.TestBase;
+import com.cybertek.utility.BrowserUtil;
+import com.cybertek.utility.TestBase;
 import com.cybertek.pages.GoogleHomePage;
 import com.cybertek.pages.SearchResultPage;
 import org.junit.jupiter.api.Assertions;

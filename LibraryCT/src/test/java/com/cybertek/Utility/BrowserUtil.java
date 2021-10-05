@@ -1,4 +1,4 @@
-package com.cybertek.Utility;
+package com.cybertek.utility;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;

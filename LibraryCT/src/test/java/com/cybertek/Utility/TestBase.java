@@ -1,4 +1,4 @@
-package com.cybertek.Utility;
+package com.cybertek.utility;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

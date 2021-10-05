@@ -1,9 +1,9 @@
 package com.cybertek.tests.day10_driver_method_Practice;
 
-import com.cybertek.Utility.ConfigReader;
-import com.cybertek.Utility.Driver;
-import com.cybertek.Utility.TestBase;
-import com.cybertek.Utility.WebOrderUtility_New;
+import com.cybertek.utility.ConfigReader;
+import com.cybertek.utility.Driver;
+import com.cybertek.utility.TestBase;
+import com.cybertek.utility.WebOrderUtility_New;
 import org.junit.jupiter.api.Test;
 
 public class SeleniumWithPropertyTest extends TestBase {
