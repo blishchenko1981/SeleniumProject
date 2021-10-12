@@ -29,4 +29,10 @@ public void i_have(String animal) {
         System.out.println("animals = " + animalList);
 
     }
+
+    @When("I call their names with below names")
+    public void i_call_their_names_with_below_names(List<String> namesList) {
+        System.out.println("namesList = " + namesList);
+
+    }
 }

@@ -18,5 +18,11 @@ Feature: Demonstrating the data table feature of cucumber
       | dog    |
       | turtle |
       | zebra  |
-    When I call their names
+    When I call their names with below names
+
+    |Kire|
+    |Doru|
+    |Tito|
+    |Zemfira|
+
     Then They come to me.
