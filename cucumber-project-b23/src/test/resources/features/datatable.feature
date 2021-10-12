@@ -20,9 +20,53 @@ Feature: Demonstrating the data table feature of cucumber
       | zebra  |
     When I call their names with below names
 
-    |Kire|
-    |Doru|
-    |Tito|
-    |Zemfira|
+      | Kire    |
+      | Doru    |
+      | Tito    |
+      | Zemfira |
 
-    Then They come to me.
+    Then They come to me with some noise
+
+      | horse  | Nai  |
+      | dog    | Woof |
+      | turtle | Hiss |
+      | zebra  | Bro  |
+
+@ui
+  Scenario: Login to weborder app by providing username pass in 2 column table
+
+    Given we are at web order login page
+    When we provide below credentials
+      | username | Tester |
+      | password | test   |
+
+    Then we should see all order page
+
+
+  Scenario: Representing table with header and more than 2 columns with list of map
+
+    Given this is the product reference
+      | Product     | Price | Discount |
+      | MyMoney     | 100   | 0.08     |
+      | FamilyAlbum | 20    | 0.15     |
+      | ScreenSaver | 80    | 0.1      |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

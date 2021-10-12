@@ -1,11 +1,13 @@
 package com.cydeo.step_definitions;
 
+import com.cydeo.pages.WLoginPage;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import java.util.List;
+import java.util.Map;
 
 public class DataTableStepDef {
 
@@ -35,4 +37,43 @@ public void i_have(String animal) {
         System.out.println("namesList = " + namesList);
 
     }
+
+    @Then("They come to me with some noise")
+    public void theyComeToMeWithSomeNoise(List<List<String>> animalsNoiseList) {
+
+        System.out.println(animalsNoiseList);
+
+
+    }
+
+    @When("we provide below credentials")
+    public void weProvideBelowCredentials(Map<String,String> credentialsMap) {
+
+      String username = credentialsMap.get("username");
+      String pass     = credentialsMap.get("password");
+
+
+        WLoginPage loginPage = new WLoginPage();
+        loginPage.login(username,pass);
+
+    }
+
+    @Given("this is the product reference")
+    public void thisIsTheProductReference(List<Map<Object, Object>> prodouctMapLst) {
+        System.out.println("prodouctMapLst = " + prodouctMapLst);
+
+        for (Map <Object , Object> eachRowMap : prodouctMapLst){
+            System.out.println("eachRowMap = " + eachRowMap);
+        }
+
+    }
+
+
+//    @Then("They come to me with some noise")
+//    public void theyComeToMeWithSomeNoise(Map<String, String> animalsNoiseMap) {
+//
+//        System.out.println("animalsNoiseMap = " + animalsNoiseMap);
+//
+//
+//    }
 }

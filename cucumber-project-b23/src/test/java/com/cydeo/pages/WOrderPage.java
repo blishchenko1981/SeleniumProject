@@ -4,6 +4,10 @@ import com.cydeo.utility.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class WOrderPage {
 
@@ -62,6 +66,29 @@ public class WOrderPage {
         PageFactory.initElements(Driver.getDriver(),  this);
     }
 
+
+
+    public List<String> getAllProductOptionFromList(){
+
+        Select selectObj = new Select(productDropdown);
+
+//        List<String> actualOptions =
+//                selectObj.getOptions().stream()    // get Stream<WebElement> from List<WebElement>
+//                        .map(eachOption-> eachOption.getText()) // get List<String> from List<WebElement>
+//                        .collect(Collectors.toList()); // eventually collect it as a list
+
+        //getOptions method from select class is used
+        // to return all dropdown options as List of webelement
+        List<WebElement> allProductOptions = selectObj.getOptions();
+        // this is the list to store actual option so we can compare with expected
+        List<String> actualOptions = new ArrayList<>();
+
+        for (WebElement eachOption : allProductOptions) {
+            System.out.println("eachOption.getText() = " + eachOption.getText());
+            actualOptions.add(eachOption.getText()) ;
+        }
+
+        return actualOptions;
+    }
+
 }
-
-
