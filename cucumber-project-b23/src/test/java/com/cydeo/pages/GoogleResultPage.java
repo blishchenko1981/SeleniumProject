@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class SearchResultPage {
+public class GoogleResultPage {
 
     @FindBy(id = "result-stats")
     private WebElement searchResultcount;
@@ -35,7 +35,7 @@ public class SearchResultPage {
 
     }
 
-    public SearchResultPage() {
+    public GoogleResultPage() {
 
         PageFactory.initElements(Driver.getDriver(), this);
 

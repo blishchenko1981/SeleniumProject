@@ -1,3 +1,6 @@
+
+
+@ui
 Feature: Weborder app login
   As a user
   I should be able to login to web order app
