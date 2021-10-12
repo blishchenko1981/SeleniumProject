@@ -15,8 +15,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(   features = "src/test/resources/features",
                         glue = "com/cydeo/step_definitions"  ,
                       plugin = {"pretty","html:target/cucumber_report.html"},
-                      dryRun = true
-                        ,tags = "@wip"
+                      dryRun = false
+                        ,tags = "@libraryLogin"
                        )
 public class TestRunner {
 
