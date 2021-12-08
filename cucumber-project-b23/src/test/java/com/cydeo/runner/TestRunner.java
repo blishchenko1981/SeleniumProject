@@ -16,9 +16,10 @@ import org.junit.runner.RunWith;
                         glue = "com/cydeo/step_definitions"  ,
                       plugin = {"pretty",
 
+                              "json:target/cucumber.json",
                               "html:target/cucumber_report.html"},
                       dryRun = false,
-                   tags = "@calculator"
+                   tags = "@smoke"
                        )
 public class TestRunner {
 

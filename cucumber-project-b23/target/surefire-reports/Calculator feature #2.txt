@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: Calculator feature #2
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.176 s <<< FAILURE! - in Calculator feature #2
+Calculator feature #2.Add 2 number multiple example #5  Time elapsed: 0.014 s  <<< FAILURE!
+java.lang.AssertionError: expected:<32> but was:<21>
+
+Calculator feature #2.Add 2 number multiple example #6  Time elapsed: 0.006 s  <<< FAILURE!
+java.lang.AssertionError: expected:<96> but was:<59>
+
