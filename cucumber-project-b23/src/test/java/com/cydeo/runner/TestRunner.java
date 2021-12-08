@@ -15,9 +15,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(   features = "src/test/resources/features",
                         glue = "com/cydeo/step_definitions"  ,
                       plugin = {"pretty",
-
                               "json:target/cucumber.json",
-                              "html:target/cucumber_report.html"},
+                              "html:target/cucumber_report.html",
+                               "rerun:target/rerun.txt"  },
                       dryRun = false,
                    tags = "@smoke"
                        )
