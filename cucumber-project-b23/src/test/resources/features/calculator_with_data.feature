@@ -1,4 +1,4 @@
-@calculator2 @non_ui
+@calculator @non_ui
 Feature: Calculator feature
   As a user,
   I should be able to use the calculator,

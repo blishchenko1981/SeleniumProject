@@ -9,45 +9,47 @@ import org.openqa.selenium.opera.OperaDriver;
 public class Driver {
     private Driver(){}
 
-    private static WebDriver obj;
+    private static InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
+
+  //  private static WebDriver obj;
 
     // return only one WebDriver instance
 
     public static WebDriver getDriver(){
         String browserName = ConfigReader.read("browser");
-
-        if(obj== null){
+// get method from InherritableThreadLocal willcheck if wwe have object in this thread or not
+        if(driverPool.get() == null){
 
             switch (browserName.toLowerCase()){
 
                 case "chrome" :
                     WebDriverManager.chromedriver().setup();
-                    obj = new ChromeDriver();
+                    driverPool.set( new ChromeDriver());
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
-                    obj = new FirefoxDriver();
+                    driverPool.set(new FirefoxDriver());
                     break;
                 case "edge":
                     WebDriverManager.edgedriver().setup();
-                    obj = new EdgeDriver();
+                    driverPool.set(new EdgeDriver());
                     break;
                 case "opera":
                     WebDriverManager.operadriver().setup();
-                    obj = new OperaDriver();
+                    driverPool.set(new OperaDriver());
                     break;
 
                 default:
-                    obj = null;
+            //        obj = null;
                     System.out.println("UNKNOWN BROWSER TYPE!!! " + browserName);
             }
 
 
-            obj.manage().window().maximize();
-            return obj;
+          //  obj.manage().window().maximize();
+            return driverPool.get();
         }else{
             // System.out.println("you have it just use existing one");
-            return obj;
+            return driverPool.get();
         }
 
     }
@@ -60,9 +62,9 @@ public class Driver {
         // quit the browser
         // make it null , cz once quit it can not be used;
 
-        if(obj != null ){
-            obj.quit();
-            obj = null; // so when ask it again , it gives us not quited fresh driver
+        if(driverPool.get()!= null ){
+            driverPool.get().quit();
+            driverPool.set(null); // so when ask it again , it gives us not quited fresh driver
         }
 
     }
