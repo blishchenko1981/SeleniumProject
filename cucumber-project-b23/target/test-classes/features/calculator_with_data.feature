@@ -14,9 +14,9 @@ Feature: Calculator feature
       | 3    | 5    | 8              |
       | 3    | 6    | 9              |
       | 2    | 55   | 57             |
-      | 13    | 3    | 16             |
-      | 31    | 1    | 21              |
-      | 41   | 55   | 59             |
+      | 13   | 3    | 16             |
+      | 31   | 1    | 21             |
+      | 41   | 55   | 96             |
 
   ## below line is how we add tag to a feature at scenario level
 #  Scenario: Add 2 numbers ex1

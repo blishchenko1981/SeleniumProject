@@ -38,6 +38,11 @@ public class WebOrderStepDef {
         System.out.println("options = " + expectedOptions);
         WOrderPage orderPage = new WOrderPage();
 
+        WebElement dropdown = orderPage.productDropdown;
+        Select selectObj = new Select(dropdown);
+        List<WebElement> allProductPtrions = selectObj.getOptions();
+        // getOptions method from Select class is used to return all dropdown options as List of webelements
+
         List<String> actualOptions = orderPage.getAllProductOptionFromList();
 
         //assert these twolist are equal

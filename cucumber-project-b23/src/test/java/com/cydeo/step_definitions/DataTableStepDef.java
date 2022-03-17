@@ -64,6 +64,7 @@ public void i_have(String animal) {
 
         for (Map <Object , Object> eachRowMap : prodouctMapLst){
             System.out.println("eachRowMap = " + eachRowMap);
+
         }
 
     }

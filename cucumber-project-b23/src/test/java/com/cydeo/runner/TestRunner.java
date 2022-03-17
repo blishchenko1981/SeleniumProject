@@ -12,14 +12,14 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(   features = "src/test/resources/features",
+@CucumberOptions(   features = "src/test/resources/features",// another way "classpath:features"
                         glue = "com/cydeo/step_definitions"  ,
                       plugin = {"pretty",
                               "json:target/cucumber.json",
                               "html:target/cucumber_report.html",
                                "rerun:target/rerun.txt"  },
                       dryRun = false,
-                   tags = "@smoke"
+                   tags = "@libraryLogin"
                        )
 public class TestRunner {
 

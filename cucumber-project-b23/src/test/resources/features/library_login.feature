@@ -10,7 +10,7 @@ Feature: Logging into Library app
     Then user should be at dashboard page
     Examples:
       | email               | password  |
-      | student42@library   | Sdet2022* |
+      | student42@librarys   | Sdet2022* |
       | student43@library   | Sdet2022* |
       | student44@library   | Sdet2022* |
       | librarian54@library | Sdet2022* |
