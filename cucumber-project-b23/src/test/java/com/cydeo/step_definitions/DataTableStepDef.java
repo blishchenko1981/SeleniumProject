@@ -11,19 +11,23 @@ import java.util.Map;
 
 public class DataTableStepDef {
 
-  @Given("I have {string}")
-  //@Given("I have {word}")
-public void i_have(String animal) {
-    System.out.println("Given I have a " + animal);
-}
+    @Given("I have {string}")
+    //@Given("I have {word}")
+    public void i_have(String animal) {
+        System.out.println("Given I have a " + animal);
+    }
+
     @When("I call their names")
     public void i_call_their_names() {
         System.out.println("when I call its names");
     }
+
     @Then("They come to me.")
     public void they_come_to_me() {
         System.out.println("Then they will come to me");
     }
+
+    //-----------------------------------------------------------------------------------------------//
 
     @Given("I have following animals")
     public void i_have_following_animals(List<String> animalList) {
@@ -47,14 +51,14 @@ public void i_have(String animal) {
     }
 
     @When("we provide below credentials")
-    public void weProvideBelowCredentials(Map<String,String> credentialsMap) {
+    public void weProvideBelowCredentials(Map<String, String> credentialsMap) {
 
-      String username = credentialsMap.get("username");
-      String pass     = credentialsMap.get("password");
+        String username = credentialsMap.get("username");
+        String pass = credentialsMap.get("password");
 
 
         WLoginPage loginPage = new WLoginPage();
-        loginPage.login(username,pass);
+        loginPage.login(username, pass);
 
     }
 
@@ -62,10 +66,29 @@ public void i_have(String animal) {
     public void thisIsTheProductReference(List<Map<Object, Object>> prodouctMapLst) {
         System.out.println("prodouctMapLst = " + prodouctMapLst);
 
-        for (Map <Object , Object> eachRowMap : prodouctMapLst){
+        for (Map<Object, Object> eachRowMap : prodouctMapLst) {
             System.out.println("eachRowMap = " + eachRowMap);
 
         }
+
+    }
+
+
+    //___________________________ practice for table_____________________________________
+    @Given("User have following animals.")
+    public void userHaveFollowingAnimals(List<String> animals) {
+        System.out.println(animals+ " Animal will come to user");
+    }
+
+    @When("I call their names with below")
+    public void iCallTheirNamesWithBelow(List<String> namesList) {
+        System.out.println("names of Animals " + namesList);
+    }
+
+    @Then("They come to me and make sound.")
+    public void theyComeToMeAndMakeSound(Map<String, String > animalSound) {
+
+        System.out.println("Animal will make next sounds: " + animalSound);
 
     }
 

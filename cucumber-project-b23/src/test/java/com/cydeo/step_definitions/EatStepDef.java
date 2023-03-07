@@ -6,12 +6,18 @@ import io.cucumber.java.en.When;
 
 public class EatStepDef {
 
-    @Given("John is hungry")
-    public void john_is_hungry() {
+    @Given("{string} is hungry")
+    public void john_is_hungry(String name) {
 
-        System.out.println("this is given code john is hungry");
+        System.out.println("this is given code "  + name +" is hungry");
 
     }
+
+    @Then("{string} is hungry again")
+    public void john_is_hungry_again(String name) {
+        System.out.println(name +" need to get more food");
+    }
+
     @When("He eats {int} cucumbers")
     public void he_eats_cucumbers(Integer quantity) {
 
@@ -36,6 +42,26 @@ public class EatStepDef {
         System.out.println("@Then he faints code");
 
     }
+
+    @Given("{string} ate {string} and {string}")
+    public void ate_chips_and_burger(String name, String dish1, String dish2) {
+        System.out.println(name + " got some, like " + dish1 + " and " + dish2);
+    }
+    @When("{string} went to home")
+    public void went_to_home(String name) {
+        System.out.println("In 1 hour " + name + " got back home.");
+    }
+
+    @When("I learn and review {int} automation tools")
+    public void i_learn_and_review_automation_tools(int toolsCount) {
+        System.out.println(toolsCount + " tools should be reviewed again in order to refresh my memory: next priority API and SQL");
+    }
+
+    @Then("{string} had stomachache")
+    public void had_stomachache(String name) {
+        System.out.println(name + " stomach got hurt, and " + name + " went to hospital!!!");
+    }
+
 
 
 

@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.cydeo.runner.FailedTestRunner
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in com.cydeo.runner.FailedTestRunner
-com.cydeo.runner.FailedTestRunner.initializationError  Time elapsed: 0.001 s  <<< ERROR!
-io.cucumber.core.exception.CucumberException: Failed to parse 'target\rerun.txt'
-Caused by: java.nio.file.NoSuchFileException: target\rerun.txt
-
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in com.cydeo.runner.FailedTestRunner

@@ -27,6 +27,10 @@ public class WAllOrderPage {
     }
 
 
+    public boolean userOnHomePage(){
+
+        return Driver.getDriver().getTitle().equals("Web Orders");
+    }
 
 
 }

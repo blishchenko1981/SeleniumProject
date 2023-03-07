@@ -1,6 +1,6 @@
 Feature: Demonstrating the data table feature of cucumber
 
-  Cucumber provide ability to organize reapiting step in different data and automaticly convert the table into few
+  Cucumber provide ability to organize repeating step in different data and automaticly convert the table into few
   known data types supported by cucumber
 
   Scenario: Petting zoo

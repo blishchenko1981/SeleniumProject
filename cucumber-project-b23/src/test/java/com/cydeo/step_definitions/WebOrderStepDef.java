@@ -41,11 +41,20 @@ public class WebOrderStepDef {
         WebElement dropdown = orderPage.productDropdown;
         Select selectObj = new Select(dropdown);
         List<WebElement> allProductPtrions = selectObj.getOptions();
-        // getOptions method from Select class is used to return all dropdown options as List of webelements
+
+        for (WebElement each : allProductPtrions) {
+            System.out.println("each = " + each.getText());
+        }
+
+        // getOptions method from Select class is used to return all dropdown options as List of web elements
 
         List<String> actualOptions = orderPage.getAllProductOptionFromList();
 
-        //assert these twolist are equal
+        for (WebElement each : allProductPtrions) {
+            System.out.println("each = " + each.getText());
+        }
+
+        //assert these two lists are equal
         assertEquals(expectedOptions, actualOptions);
     }
 
